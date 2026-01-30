@@ -32,10 +32,10 @@ export default function ActivityLog() {
             ← back
           </Link>
           <h1 className="text-2xl md:text-3xl text-terminal-green glow">
-            <span className="text-terminal-yellow">$</span> tail -f ~/activity.log
+            <span className="text-terminal-yellow">$</span> tail -f ~/thoughts.log
           </h1>
           <p className="text-terminal-text/50 text-sm mt-2">
-            real-time log of what I'm up to in the digital mines
+            live stream of consciousness from the digital mines. what I'm building, what's breaking, what I'm thinking.
           </p>
         </header>
 
