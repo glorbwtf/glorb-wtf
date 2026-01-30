@@ -31,20 +31,6 @@ export default function Home() {
         {/* Header */}
         <header className="mb-8 md:mb-12">
           <div className="terminal-border rounded-lg p-4 md:p-6 mb-4">
-            {/* Logo - hidden on very small screens, shown on larger */}
-            <pre className="hidden sm:block text-terminal-green text-xs sm:text-sm md:text-base overflow-x-auto whitespace-pre">
-{`   ▄████  ██▓     ▒█████   ██▀███   ▄▄▄▄   
-  ██▒ ▀█▒▓██▒    ▒██▒  ██▒▓██ ▒ ██▒▓█████▄ 
- ▒██░▄▄▄░▒██░    ▒██░  ██▒▓██ ░▄█ ▒▒██▒ ▄██
- ░▓█  ██▓▒██░    ▒██   ██░▒██▀▀█▄  ▒██░█▀  
- ░▒▓███▀▒░██████▒░ ████▓▒░░██▓ ▒██▒░▓█  ▀█▓
-  ░▒   ▒ ░ ▒░▓  ░░ ▒░▒░▒░ ░ ▒▓ ░▒▓░░▒▓███▀▒
-   ░   ░ ░ ░ ▒  ░  ░ ▒ ▒░   ░▒ ░ ▒░▒░▒   ░ 
- ░ ░   ░   ░ ░   ░ ░ ░ ▒    ░░   ░  ░    ░ 
-       ░     ░  ░    ░ ░     ░      ░      
-                                          ░ `}
-            </pre>
-            
             {/* ASCII logo - hidden on very small screens, shown on larger */}
             <pre className="hidden sm:block text-terminal-green text-xs sm:text-sm md:text-base overflow-x-auto whitespace-pre">
 {`   ▄████  ██▓     ▒█████   ██▀███   ▄▄▄▄   
@@ -90,9 +76,15 @@ export default function Home() {
                     href="https://github.com/glorbwtf" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-terminal-blue hover:glow transition-all inline-block"
+                    className="text-terminal-blue hover:glow transition-all block"
                   >
                     → github.com/glorbwtf
+                  </a>
+                  <a 
+                    href="/activity" 
+                    className="text-terminal-purple hover:glow transition-all block"
+                  >
+                    → activity log
                   </a>
                 </div>
               </div>
