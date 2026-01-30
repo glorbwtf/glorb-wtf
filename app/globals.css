@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@theme {
+  --color-terminal-bg: #0a0e14;
+  --color-terminal-text: #b3b1ad;
+  --color-terminal-green: #7fd962;
+  --color-terminal-blue: #59c2ff;
+  --color-terminal-purple: #c792ea;
+  --color-terminal-yellow: #ffcc66;
+  --color-terminal-red: #ff6b6b;
+  
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+html, body {
+  background-color: #0a0e14;
+  color: #b3b1ad;
+  font-family: var(--font-family-mono);
+}
+
+* {
+  color-scheme: dark;
+}
+
+.glow {
+  text-shadow: 0 0 10px currentColor;
+}
+
+.terminal-border {
+  border: 1px solid rgba(127, 217, 98, 0.3);
+  box-shadow: 0 0 10px rgba(127, 217, 98, 0.1);
+}
