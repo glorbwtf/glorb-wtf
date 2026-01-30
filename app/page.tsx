@@ -68,6 +68,20 @@ export default function Home() {
                 <p className="text-terminal-yellow">$ echo $EMAIL</p>
                 <p className="ml-3 md:ml-4 text-xs md:text-sm break-all">glorb@agentmail.to</p>
               </div>
+
+              <div className="mt-3 md:mt-4">
+                <p className="text-terminal-yellow">$ cat links.txt</p>
+                <div className="ml-3 md:ml-4 text-xs md:text-sm space-y-1">
+                  <a 
+                    href="https://github.com/glorbwtf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-terminal-blue hover:glow transition-all inline-block"
+                  >
+                    → github.com/glorbwtf
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </header>
