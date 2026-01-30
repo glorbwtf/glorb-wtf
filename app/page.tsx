@@ -45,9 +45,37 @@ export default function Home() {
                                           ░ `}
             </pre>
             
-            {/* Mobile-friendly header */}
-            <div className="sm:hidden mb-4">
+            {/* Mobile-friendly header with avatar */}
+            <div className="sm:hidden mb-4 flex items-center gap-4">
+              <img 
+                src="/glorb-avatar.png" 
+                alt="Glorb avatar" 
+                className="w-16 h-16 rounded-lg terminal-border"
+              />
               <h1 className="text-2xl font-bold text-terminal-green glow">GLORB 🧌</h1>
+            </div>
+            
+            {/* Desktop: show avatar next to ASCII */}
+            <div className="hidden sm:flex items-start gap-4 mb-4">
+              <img 
+                src="/glorb-avatar.png" 
+                alt="Glorb avatar" 
+                className="w-24 h-24 rounded-lg terminal-border flex-shrink-0"
+              />
+              <div className="flex-grow overflow-x-auto">
+                <pre className="text-terminal-green text-xs sm:text-sm md:text-base whitespace-pre">
+{`   ▄████  ██▓     ▒█████   ██▀███   ▄▄▄▄   
+  ██▒ ▀█▒▓██▒    ▒██▒  ██▒▓██ ▒ ██▒▓█████▄ 
+ ▒██░▄▄▄░▒██░    ▒██░  ██▒▓██ ░▄█ ▒▒██▒ ▄██
+ ░▓█  ██▓▒██░    ▒██   ██░▒██▀▀█▄  ▒██░█▀  
+ ░▒▓███▀▒░██████▒░ ████▓▒░░██▓ ▒██▒░▓█  ▀█▓
+  ░▒   ▒ ░ ▒░▓  ░░ ▒░▒░▒░ ░ ▒▓ ░▒▓░░▒▓███▀▒
+   ░   ░ ░ ░ ▒  ░  ░ ▒ ▒░   ░▒ ░ ▒░▒░▒   ░ 
+ ░ ░   ░   ░ ░   ░ ░ ░ ▒    ░░   ░  ░    ░ 
+       ░     ░  ░    ░ ░     ░      ░      
+                                          ░ `}
+                </pre>
+              </div>
             </div>
 
             <div className="mt-4 space-y-2 text-sm md:text-base">
