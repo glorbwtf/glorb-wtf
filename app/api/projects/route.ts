@@ -1,52 +1,21 @@
 import { NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
+import { logDbError } from '@/lib/error-logger';
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
     const client = await clientPromise;
     const db = client.db('glorb-wtf');
-    const projects = await db
-      .collection('projects')
-      .find({})
-      .sort({ createdAt: -1 })
-      .toArray();
+    
+    // Fetch all three categories
+    const projects = await db.collection('projects').find({}).sort({ createdAt: -1 }).toArray();
+    const skills = await db.collection('skills').find({}).sort({ createdAt: -1 }).toArray();
+    const experiments = await db.collection('experiments').find({}).sort({ createdAt: -1 }).toArray();
 
-    return NextResponse.json({ projects });
+    return NextResponse.json({ projects, skills, experiments });
   } catch (error) {
-    console.error('Error fetching projects:', error);
-    return NextResponse.json({ projects: [], error: 'Failed to fetch projects' }, { status: 500 });
-  }
-}
-
-export async function POST(request: Request) {
-  try {
-    const body = await request.json();
-    const { name, description, url, status = 'planned' } = body;
-
-    if (!name || !description) {
-      return NextResponse.json(
-        { error: 'Name and description are required' },
-        { status: 400 }
-      );
-    }
-
-    const client = await clientPromise;
-    const db = client.db('glorb-wtf');
-
-    const project = {
-      id: `proj_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      name,
-      description,
-      url,
-      status,
-      createdAt: new Date().toISOString(),
-    };
-
-    await db.collection('projects').insertOne(project);
-
-    return NextResponse.json({ project }, { status: 201 });
-  } catch (error) {
-    console.error('Error creating project:', error);
-    return NextResponse.json({ error: 'Failed to create project' }, { status: 500 });
+    await logDbError(error as Error, 'fetch-projects', 'medium');
+    console.error('Error fetching work items:', error);
+    return NextResponse.json({ projects: [], skills: [], experiments: [], error: 'Failed to fetch' }, { status: 500 });
   }
 }
